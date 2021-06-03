@@ -2,7 +2,11 @@
 
 ## What it is:
 
+This application is a Team Profile Generator, where a user can input the names of their team Manager, Engineers, and Interns. They will then be prompted to answer several questions about each team member, including their associated email address, Github account username, room number, or school that they attend. When there are no more team members to add, the information will then display in individual stylized cards on an html page.
+
 ## How to use:
+
+To start the program, 
 
 ## Demo:
 
