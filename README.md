@@ -6,7 +6,13 @@ This application is a Team Profile Generator, where a user can input the names o
 
 ## How to use:
 
-To start the program, 
+To start the program, usibg gitbash/the VS integrated terminal, the user can run the following code:
+
+```
+node index.html
+```
+
+The prompts will then display in order in the terminal, starting with the team manager name input.
 
 ## Demo:
 
