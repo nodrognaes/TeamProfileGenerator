@@ -6,7 +6,7 @@
 
 ## Demo:
 
-![demo](https://user-images.githubusercontent.com/48900910/120568671-4e61f580-c3e2-11eb-80e5-c33d584dbf0c.gif)
+![demo](https://user-images.githubusercontent.com/48900910/120568966-fd9ecc80-c3e2-11eb-87a6-5598083ef73d.gif)
 
 Screenshot of demo html:
 
