@@ -1,6 +1,6 @@
 const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer");
-const Intern = require("./lib/Intern");
+const Engineer = require("./lib/engineer");
+const Intern = require("./lib/intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
@@ -16,13 +16,29 @@ const idArray = [];
 function appMenu() {
 
   function createManager() {
-    console.log("Please build your team");
+    console.log("Please build your team: Add a team Manager");
     inquirer.prompt([
-      //
-      // YOUR CODE HERE:
-      // CREATE OBJECTS OF QUESTIONS HERE FOR MANAGER
       //*validate email?
-      //
+      {
+        type: "input",
+        name: "managerName",
+        message: "What is the manager's name?"
+      },
+      {
+        type: "input",
+        name: "managerId",
+        message: "What is the manager's ID number?"
+      },
+      {
+        type: "input",
+        name: "managerEmail",
+        message: "What is the manager's email address?"
+      },
+      {
+        type: "input",
+        name: "managerOfficeNumber",
+        message: "What is the manager's office number?"
+      }
     ]).then(answers => {
       const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOfficeNumber);
       teamMembers.push(manager);
@@ -60,38 +76,60 @@ function appMenu() {
 
   function addEngineer() {
     inquirer.prompt([
-      //
-      // YOUR CODE HERE
-      // CREATE OBJECTS OF QUESTIONS FOR ENGINEER
-      //
+      {
+        type: "input",
+        name: "engineerName",
+        message: "What is the engineer's name?"
+      },
+      {
+        type: "input",
+        name: "engineerId",
+        message: "What is the engineer's ID number?"
+      },
+      {
+        type: "input",
+        name: "engineerEmail",
+        message: "What is the engineer's email address?"
+      },
+      {
+        type: "input",
+        name: "engineerGithub",
+        message: "What is the engineer's Github username?"
+      }
     ]).then(answers => {
-      //
-      // YOUR CODE HERE
-      // 1. CREATE A VARIABLE TO STORE THE ENGINEER OBJECT INSTANTIATED WITH THE ENGINEER CLASS, PASSING ANSWERS PROPERTIES AS INPUT AURGUMENTS 
-      //    TO THE ENGINEER CLASS CONSTRUCTOR
-      // 2. ADD (PUSH) THE ENGINEER VARIABLE TO the teamMembers ARRAY
-      // 3. ADD (PUSH) THE ENGINERR ID TO THE idArray ARRAY
-      // 
- 
+      const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
+      teamMembers.push(engineer);
+      idArray.push(answers.engineerId);
       createTeam();
     });
   }
 
   function addIntern() {
     inquirer.prompt([
-      //
-      // YOUR CODE HERE
-      // CREATE OBJECTS OF QUESTIONS FOR ENGINEER
-      //
+      {
+        type: "input",
+        name: "internName",
+        message: "What is the intern's name?"
+      },
+      {
+        type: "input",
+        name: "internId",
+        message: "What is the intern's ID number?"
+      },
+      {
+        type: "input",
+        name: "internEmail",
+        message: "What is the intern's email address?"
+      },
+      {
+        type: "input",
+        name: "internSchool",
+        message: "What school does the intern attend?"
+      }
     ]).then(answers => {
-      //
-      // YOUR CODE HERE
-      // 1. CREATE A VARIABLE TO STORE THE INTERN OBJECT INSTANTIATED WITH THE INTERN CLASS, PASSING ANSWERS PROPERTIES AS INPUT AURGUMENTS 
-      //    TO THE INTERN CLASS CONSTRUCTOR
-      // 2. ADD (PUSH) THE INTERN VARIABLE TO the teamMembers ARRAY
-      // 3. ADD (PUSH) THE INTERN ID TO THE idArray ARRAY
-      // 
-
+      const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
+      teamMembers.push(intern);
+      idArray.push(answers.internId);
       createTeam();
     });
   }
